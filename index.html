@@ -3222,7 +3222,9 @@ const PROGRAM = [
  }
 ];
 
-const LS='forge.bedrock.v1';
+const LS='swolequest.bedrock.v1';
+/* one-time key migration: forge.* -> swolequest.* (2026-09-11 rename) */
+try{const _o='forge.bedrock.v1',_v=localStorage.getItem(_o);if(_v!==null){if(localStorage.getItem(LS)===null)localStorage.setItem(LS,_v);localStorage.removeItem(_o);}}catch(e){}
 let state=load();
 function fresh(){return {v:1,pos:0,done:{},draft:{},lastByEx:{},history:[],vars:{},set:{unit:'lb',w10:'10A',rm:{squat:'',bench:'',deadlift:'',ohp:''},deficit:'standard'}};}
 function load(){try{const s=JSON.parse(localStorage.getItem(LS));if(s&&s.v===1)return s;if(s&&s.days)return migrateOld(s);}catch(e){}
@@ -3634,7 +3636,7 @@ function chartSVG(name){
     '<path d="'+line+'" fill="none" stroke="#9dc88d" stroke-width="2.5"/>'+dots+'</svg>';
 }
 
-function R(c,t){return '<a class="ref" href="https://bjepp77.github.io/forge-hub/#university" target="_blank" rel="noopener" title="'+t+' - read the paper at SwoleQuest University">'+c+' &#8599;</a>';}
+function R(c,t){return '<a class="ref" href="https://bjepp77.github.io/swolequest/#university" target="_blank" rel="noopener" title="'+t+' - read the paper at SwoleQuest University">'+c+' &#8599;</a>';}
 // --- GUIDE ---
 function renderGuide(){
   const el=document.getElementById('guideBody');
@@ -3662,7 +3664,7 @@ function renderMore(){
   h+='<div class="quote">Most growth happens between failure and ~3 reps shy of it. 1-2 RIR is the sweet spot. '+R('FAILURE','Refalo 2023 - failure vs non-failure hypertrophy')+R('RIR','Robinson 2024 - proximity-to-failure dose-response')+'</div>';
   h+='<div class="quote">Autoregulate honestly - a lighter day when you\'re flat is the program working. '+R('RPE-USE','Helms 2016 - programming with RIR/RPE')+'</div>';
   h+='<div class="quote">Getting stronger over months = progressing. The log is the coach. '+R('OVERLOAD','Plotkin 2022 - load vs rep progression')+'</div></div>';
-  h+='<a class="btn ghost" href="https://bjepp77.github.io/forge-hub/#university" target="_blank" rel="noopener" style="display:block;text-align:center;margin-top:10px;text-decoration:none">Read the research - SwoleQuest University &#8599;</a>';
+  h+='<a class="btn ghost" href="https://bjepp77.github.io/swolequest/#university" target="_blank" rel="noopener" style="display:block;text-align:center;margin-top:10px;text-decoration:none">Read the research - SwoleQuest University &#8599;</a>';
   // settings
   const s=state.set;
   h+='<div class="pagetop" style="padding:18px 0 4px"><h2>Settings</h2></div>';
