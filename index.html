@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0c0d0b">
-<title>BEDROCK - Minimum-Dose Hypertrophy</title>
+<title>FOUNDATIONS - Minimum-Dose Hypertrophy</title>
 <style>
 :root{--bg:#0c0d0b;--panel:#131511;--panel2:#181b15;--line:#2a2e24;--ink:#edf0e6;--dim:#a3ab95;--moss:#9dc88d;--moss2:#c4e3b6;--good:#7cf29c;--bad:#ff5d5d}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -56,7 +56,7 @@ h1{font-size:22px;letter-spacing:2px;color:var(--moss);text-shadow:0 0 18px rgba
   </div>
 </div>
 <script>
-/* ============ BEDROCK program data (original composition) ============ */
+/* ============ FOUNDATIONS program data (original composition, ex-BEDROCK) ============ */
 const DAYS = [
 {id:'dayA', num:'DAY A', name:'SQUAT + PUSH/PULL', desc:'Full body, squat pattern', ex:[
   {n:'Back Squat (high bar)', sets:3, r:'6-10', rest:150, v:'backsquat', cue:'High bar, upright torso, full depth. The quad anchor for the week.', vars:['Back Squat (high bar)','Goblet Squat (home)']},
@@ -134,7 +134,7 @@ function dayLog(did){S.days=S.days||{};S.days[did]=S.days[did]||{};return S.days
 /* ============ views ============ */
 const app=document.getElementById('app');
 function home(){
-  app.innerHTML='<h1>BEDROCK</h1><div class="sub">MINIMUM-DOSE HYPERTROPHY - the least you can do and still grow</div>'
+  app.innerHTML='<h1>FOUNDATIONS</h1><div class="sub">MINIMUM-DOSE HYPERTROPHY - the least you can do and still grow</div>'
   +'<div class="heroImg"></div>'
   +'<div class="panel"><div class="pt">HOW IT RUNS</div><p>Three days a week, at least one rest day between - Mon/Wed/Fri works. Every set: '+RIR+'. When every set tops the rep range, add weight next time. Every lift has a home swap in the dropdown - no gym, no excuse.</p></div>'
   + DAYS.map((d,i)=>'<button class="daybtn" data-i="'+i+'"><div><div class="daynum">'+d.num+'</div><div class="dt">'+d.name+'</div><div class="dd">'+d.desc+'</div></div><span class="arrow">&#9654;</span></button>').join('')
